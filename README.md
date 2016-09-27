@@ -25,4 +25,9 @@ Example:
 	$autoloader->register('Monolog', '/vendor/monolog/monolog/src/Monolog');
 	$autoloader->register('Symfony\\Component\\Yaml', '/vendor/symfony/yaml');
 
-The Nirvarnia Autoloader automatically registers itself as an SPL autoloader - there is no need to call spl_autoload_register().
+The Nirvarnia Autoloader automatically registers itself as an SPL autoloader - there is no need to call `spl_autoload_register()`.
+
+## TODO
+
+- Tests
+
