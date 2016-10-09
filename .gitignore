@@ -1,0 +1,13 @@
+# WORKING FILES
+#/todo
+
+# DEPENDENCIES
+/vendor
+
+# SYSTEM FILES
+Thumbs.db
+.DS_Store
+.cvs
+.svn
+*.bak
+*.swp
