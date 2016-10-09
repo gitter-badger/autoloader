@@ -1,0 +1,62 @@
+# ------------------------------------------------------------------------------
+# Configuration file for the ApiGen documentation generator.
+#
+# Supported options: accessLevels, annotationGroups, baseUrl, charset, config,
+# debug, deprecated, destination, download, exclude, extensions, googleAnalytics,
+# googleCseId, groups, internal, main, noSourceCode, php, skipDocPath, source,
+# sourceCode, template, templateConfig, templateTheme, title, todo, tree,
+# visibilityLevels.
+#
+# NEON file format: https://ne-on.org/
+# ------------------------------------------------------------------------------
+
+# Directories and files for which documentation is generated.
+source:
+    - src/
+
+# Target directory for the documentation.
+destination: apigen/
+
+# Character encoding of source files.
+charset:
+    - UTF-8
+
+# List of allowed file extensions.
+extensions:
+    - php
+
+# Files and directories to exclude from processing.
+exclude:
+    - .*
+
+# Title of generated documentation.
+title: API Documentation
+
+# Generate tree view of classes, interfaces and exceptions?
+tree: yes
+
+# Generate documentation for methods and properties with the following access levels.
+# Possible values: [public, protected, private]
+accessLevels:
+    - public
+
+# Generate documentation for elements marked as @internal?.
+internal: no
+
+# Generate documentation for classes, methods, properties and constants marked as @deprecated?
+deprecated: no
+
+# Generate documentation for PHP internal classes?
+php: no
+
+# Generate documentation of tasks (@todo)?
+todo: no
+
+# Generate highlighted source code?
+sourceCode: no
+
+# Add a link to download documentation as a ZIP archive?
+download: no
+
+# Display additional output information in case of errors?
+debug: yes
