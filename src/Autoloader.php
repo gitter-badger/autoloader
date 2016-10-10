@@ -1,13 +1,15 @@
 <?php declare(strict_types=1);
 
+namespace Nirvarnia;
+
 /**
  * Minimalist PSR-4 compatible autoloading mechanism.
  *
  * Based on the PHP-FIG's PSR-4 example autoloader.
  *
- * Example usage:
+ * Usage:
  *
- *     $autoloader = new Autoloader($base_dir);
+ *     $autoloader = new \Nirvarnia\Autoloader($base_dir);
  *     $autoload->register($prefix, $directory);
  *
  * Where $base_dir is an optional base directory for all autoloadable resources.
@@ -23,17 +25,18 @@
  *
  *     $autoload->register($prefix, [$directory, $directory, $directory]);
  *
- * The Autoloader automatically registers itself as an SPL autoloader - there is
- * no need to call spl_autoload_register().
+ * Nirvarnia Autoloader automatically registers itself as an SPL autoloader.
+ * There is no need to call spl_autoload_register().
  *
  * @package     Nirvarnia
  * @subpackage  Nirvarnia Autoloader
  * @version     1.0.0
  * @author      PHP Framework Interoperability Group <https://github.com/php-fig/>
  * @author      Kieran Potts <hello@kieranpotts.com>
- * @copyright   PHP Framework Interoperability Group
+ * @copyright   2013-2016 PHP Framework Interoperability Group
  * @copyright   2016 Kieran Potts
  * @license     Public domain
+ * @link        https://github.com/nirvarnia/autoloader
  * @link        https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-4-autoloader-examples.md
  */
 final class Autoloader
@@ -64,10 +67,13 @@ final class Autoloader
     /**
      * Constructor.
      *
-     * Sets the base directory for all class paths, and registers the load()
-     * method with the SPL's autoloader stack.
+     * Sets the base directory for all autoloadable class paths, and registers
+     * the load() method with the SPL's autoloader stack.
      *
-     * @params  string  $include_paths
+     * If a base directory is not provided, the base directory will be set to
+     * PHP's include path.
+     *
+     * @params  string|null  $base_dir
      */
     public function __construct(string $base_dir = null)
     {
@@ -85,7 +91,7 @@ final class Autoloader
      */
     public function register(string $prefix, $directory)
     {
-        // Normalize namespace prefix and the directory paths.
+        // Normalize the namespace prefix and the directory paths.
         $prefix = trim($prefix, '\\') . '\\';
         $directories = (array) $directory;
         foreach ($directories as &$directory) {
@@ -98,7 +104,7 @@ final class Autoloader
     /**
      * Class autoloading method.
      *
-     * Takes a fully-qualified class name as its parameter.
+     * Takes a fully-qualified class name as its only parameter.
      *
      * Returns the mapped file name on success, or boolean false if the class
      * could not be autoloaded.
@@ -108,8 +114,8 @@ final class Autoloader
      */
     public function load($class)
     {
-        // Work backwards through the namespace names of the fully-qualified
-        // class name to find a mapped file name.
+        // Work backwards through the namespace parts of the fully-qualified
+        // class name, until find a mapped file name.
         $prefix = $class;
         while (false !== $pos = strrpos($prefix, '\\')) {
 
@@ -119,7 +125,7 @@ final class Autoloader
             // The rest is the relative class name.
             $relative_class = substr($class, $pos + 1);
 
-            // Try to load a mapped file for the prefix and relative class.
+            // Try to load a mapped file for the prefix + relative class.
             $mapped_file = $this->loadMappedFile($prefix, $relative_class);
             if ($mapped_file) {
                 return $mapped_file;
@@ -136,7 +142,7 @@ final class Autoloader
     /**
      * Load the mapped file for a namespace prefix and relative class.
      *
-     * If a mapped file was successfully loaded, the name of the mapped file
+     * If a mapped file is successfully loaded, the name of the mapped file
      * is returned. If no mapped file can be loaded, boolean false is returned.
      *
      * @param  string  $prefix          The namespace prefix.
@@ -145,12 +151,11 @@ final class Autoloader
      */
     protected function loadMappedFile($prefix, $relative_class)
     {
-        // Are there any base directories for this namespace prefix?
         if ( ! array_key_exists($prefix, $this->prefixes)) {
             return false;
         }
 
-        // Look through base directories for this namespace prefix.
+        // Look through the base directories for this namespace prefix.
         // If a mapped file exists, require it and exit.
         foreach ($this->prefixes[$prefix] as $directory) {
             $file = $this->base_dir
