@@ -6,11 +6,9 @@ Go to the project's Github page and click "Fork". A copy of this repository will
 
     git clone https://github.com/your-username/repo-name.git
 
-(Git automatically adds a remote named "origin", so there is no need to run the `git remote add` command to define this.)
+Git will automatically add a remote named "origin", so there is no need to run the `git remote add` command to define your remote repository.
 
-To contribute to the original project, first create a feature branch in your local repository. Branches facilitate multiple users making changes to a project at the same time. Although you are free to name your local branches whatever you like, the GitFlow naming convention is encouraged (http://jeffkreeftmeijer.com/2010/why-arent-you-using-git-flow/).
-
-To create a new branch named "feature/fix-for-issue-301" and to check it out:
+To contribute to the original project, first create a feature branch in your local repository. Branches facilitate multiple contributors making changes to a project at the same time. Although you are free to name your local branches whatever you like, the GitFlow naming convention is encouraged. To create a new branch named "feature/fix-for-issue-301" and to check it out:
 
     git branch feature/fix-for-issue-301
     git checkout feature/fix-for-issue-301
@@ -19,19 +17,17 @@ Or more succinctly:
 
     git checkout -b feature/fix-for-issue-301
 
-After making changes locally, run the following commands to stage, commit and push all changes up to the feature branch in your remote repository:
+After making changes locally, run the following commands to stage, commit and push all changes up to the feature branch in your remote "origin" repository:
 
     git add .
     git commit -m "<message>"
     git push origin feature/fix-for-issue-301
 
-Limit each branch to one specific feature or fix. Include any tests and documentation that is relevant to the commit.
+Limit each branch to one specific feature or fix. Include any tests and documentation that is relevant to the work you have done.
 
-When you have finished making your changes, you should issue a pull request to the original project repository, requesting that the project maintainers consider your changes and merge them into the main project. Before you do this, there are a couple of things to check:
+When you have finished making your changes, you should issue a pull request to the original project repository. A pull requests notifies the project maintainers, who will consider your changes and merge them into the main project. Before you do this, there are a couple of things to check.
 
-If you have made lots of commits, you should use git rebase to condense your commit history before issuing the pull request. Rebasing is the process of moving a branch to a new base commit. This will make it easier for the project owners to understand what changes you've made. The rebase command is as follows, where `<base>` is any kind of commit reference, such as a commit ID or a branch name.
-
-    git rebase <base>
+If you have made lots of commits, you should use `git rebase` to condense your commit history before issuing the pull request. Rebasing is the process of moving a branch to a new base commit. This will make it easier for the project owners to understand what changes you've made.
 
 It's a good idea also to synchronise your local feature branch with the original project repository, so that you've got the very latest code and to ensure that your pull request has a nice clean diff that contains only the changes related to your feature or fix. You will need to add another remote pointing back to the original repository. You can call this remote anything you like, but it is conventional to call this remote "upstream". When you've done that, you will be able to pull in the latest changes from the original repo's master branch.
 

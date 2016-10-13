@@ -2,16 +2,34 @@
 
 /*
 ------------------------------------------------------------------------------
-Option 1: Manual registration of dependencies
+Option 1: Use Composer
+------------------------------------------------------------------------------
+
+If you are using the Composer package manager, you can use its class loader to
+run your tests. Composer will automatically load the project files plus any
+dependencies, so you don't have to configure the class paths manually.
+
+Uncomment the following line to include Composer's autoloading scripts. The
+path is relative to the project's root directory.
+
+*/
+
+//require('vendor/autoload.php');
+
+/*
+------------------------------------------------------------------------------
+Option 2: Manual registration of dependencies
 ------------------------------------------------------------------------------
 
 Nirvarnia Autoloader is a simple PSR-4 compatible class loader. You can use it
 to autoload this package and its dependencies when running tests, if you are not
-using Composer's autoloader (see below).
+using Composer's autoloader.
 
 Usage:
 
 	$autoloader = new \Nirvarnia\Autoloader($base_dir);
+    $autoload->register($prefix, $directory);
+    $autoload->register($prefix, $directory);
     $autoload->register($prefix, $directory);
 
 $base_dir is an optional base directory for all autoloadable resources. If you
@@ -28,17 +46,17 @@ parameter.
     $autoload->register($prefix, [$directory, $directory, $directory]);
 
 For testing, you will need to register an autoloading rule for the package
-itself. The package files are in the src directory. You may also need to register
-autoloading rules for each of the package's dependencies, which are in the vendor
-directory.
+itself. The package files are in the ./src/ directory. You may also need to
+register autoloading rules for each of the package's dependencies, which are in
+the ./vendor/ directory.
 
 Example:
 
 	$base_dir = dirname(dirname(__FILE__));
     $autoloader = new \Nirvarnia\Autoloader($base_dir);
 
-    // Test package:
-    $autoloader->register('Nirvarnia\\Helper\\Str', '/src/Nirvarnia/Helper/Str');
+    // Package:
+    $autoloader->register('Nirvarnia\\Helper\\Str', '/src');
 
     // Dependencies:
 	$autoloader->register('Carbon', '/vendor/nesbot/carbon/src/Carbon');
@@ -50,22 +68,7 @@ autoloader - there is no need to call spl_autoload_register().
 
 */
 
-//require('Autoloader.php');
+require('Autoloader.php');
 
-//$autoloader = new Nirvarnia\Autoloader(dirname(dirname(__FILE__)));
-//$autoloader->register('Nirvarnia\\Xxxxx\\Xxxx', '/src/Nirvarnia/Xxxxx/Xxxx');
-
-/*
-------------------------------------------------------------------------------
-Option 2: Use Composer
-------------------------------------------------------------------------------
-
-If you are using the Composer package manager, you can just use its class loader
-to run your tests. Composer will automatically load the project files plus its
-dependencies, so you don't have to configure the class paths manually.
-
-Uncomment the following line to use Composer's autoloading mechanism.
-
-*/
-
-//require('vendor/autoload.php');
+$autoloader = new \Nirvarnia\Autoloader(dirname(dirname(__FILE__)));
+$autoloader->register('Nirvarnia\\xxxxxx', '/src');
