@@ -25,11 +25,11 @@ After making changes locally, run the following commands to stage, commit and pu
 
 Limit each branch to one specific feature or fix. Include any tests and documentation that is relevant to the work you have done.
 
-When you have finished making your changes, you should issue a pull request to the original project repository. A pull requests notifies the project maintainers, who will consider your changes and merge them into the main project. Before you do this, there are a couple of things to check.
+When you have finished making your changes, you should issue a pull request to the original project repository. A pull request notifies the project maintainers, who will consider your changes and merge them into the main project. Before you do this, there are a couple of things to check.
 
-If you have made lots of commits, you should use `git rebase` to condense your commit history before issuing the pull request. Rebasing is the process of moving a branch to a new base commit. This will make it easier for the project owners to understand what changes you've made.
+If you have made lots of commits, you could use `git rebase` to condense your commit history before issuing the pull request. Rebasing is the process of moving a branch to a new base commit. This will make it easier for the project owners to understand what changes you've made.
 
-It's a good idea also to synchronise your local feature branch with the original project repository, so that you've got the very latest code and to ensure that your pull request has a nice clean diff that contains only the changes related to your feature or fix. You will need to add another remote pointing back to the original repository. You can call this remote anything you like, but it is conventional to call this remote "upstream". When you've done that, you will be able to pull in the latest changes from the original repo's master branch.
+It's a good idea also to synchronise your local feature branch with the original project repository, so that you've got the very latest code and to ensure that your pull request has a nice clean diff that contains only the changes related to your feature or fix. You will need to add another remote pointing back to the original repository. You can call this remote anything you like, but it is conventional to name it "upstream". When you've done that, you'll be able to pull in the latest changes from the original repo's master branch.
 
     git remote add upstream https://github.com/original-project/original-repo.git
     git pull upstream master
