@@ -56,7 +56,7 @@ Example:
     $autoloader = new \Nirvarnia\Autoloader($base_dir);
 
     // Package:
-    $autoloader->register('Nirvarnia\\Helper\\Str', '/src');
+    $autoloader->register('Nirvarnia\\Str', '/src');
 
     // Dependencies:
 	$autoloader->register('Carbon', '/vendor/nesbot/carbon/src/Carbon');
