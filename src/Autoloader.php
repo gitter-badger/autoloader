@@ -1,43 +1,42 @@
-<?php declare(strict_types=1);
+<?php
+
+/**
+ * This is free and unencumbered software released into the public domain.
+ *
+ * Anyone is free to copy, modify, publish, use, compile, sell, or
+ * distribute this software, either in source code form or as a compiled
+ * binary, for any purpose, commercial or non-commercial, and by any
+ * means.
+ *
+ * In jurisdictions that recognize copyright laws, the author or authors
+ * of this software dedicate any and all copyright interest in the
+ * software to the public domain. We make this dedication for the benefit
+ * of the public at large and to the detriment of our heirs and
+ * successors. We intend this dedication to be an overt act of
+ * relinquishment in perpetuity of all present and future rights to this
+ * software under copyright law.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+ * IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR
+ * OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+ * ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+ * OTHER DEALINGS IN THE SOFTWARE.
+ *
+ * @package     Nirvarnia\Autoloader
+ * @author      PHP Framework Interoperability Group <https://github.com/php-fig/>
+ * @author      Kieran Potts <hello@kieranpotts.com>
+ * @link        https://github.com/nirvarnia/autoloader
+ * @link        https://www.nirvarnia.org/
+ */
+
+declare(strict_types=1);
 
 namespace Nirvarnia;
 
 /**
  * Minimalist PSR-4 compatible autoloading mechanism.
- *
- * Based on the PHP-FIG's PSR-4 example autoloader.
- *
- * Usage:
- *
- *     $autoloader = new \Nirvarnia\Autoloader($base_dir);
- *     $autoload->register($prefix, $directory);
- *
- * Where $base_dir is an optional base directory for all autoloadable resources.
- * If you do not provide a base directory, it will be set to PHP's include path.
- *
- * The register() method adds a new autoloading rule. $prefix is a namespace
- * prefix and $directory is a directory path - relative to $base_dir -
- * containing the classes and interfaces for the given namespace prefix.
- *
- * Optionally, a single namespace prefix may have classes littered about more
- * than one base directory. If so, provide an array of directories as the
- * second argument:
- *
- *     $autoload->register($prefix, [$directory, $directory, $directory]);
- *
- * Nirvarnia Autoloader automatically registers itself as an SPL autoloader.
- * There is no need to call spl_autoload_register().
- *
- * @package     Nirvarnia
- * @subpackage  Nirvarnia Autoloader
- * @version     1.0.0
- * @author      PHP Framework Interoperability Group <https://github.com/php-fig/>
- * @author      Kieran Potts <hello@kieranpotts.com>
- * @copyright   2013-2016 PHP Framework Interoperability Group
- * @copyright   2016 Kieran Potts
- * @license     Public domain
- * @link        https://github.com/nirvarnia/autoloader
- * @link        https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-4-autoloader-examples.md
  */
 final class Autoloader
 {
@@ -49,6 +48,13 @@ final class Autoloader
     const VERSION = '1.0.0';
 
     /**
+     * @var  string  $base_dir
+	 *
+     * The base directory for all autoloadable class paths.
+     */
+    private $base_dir = null;
+
+    /**
      * @var  $prefixes  array
      *
      * An associative array where the key is a namespace prefix and the value
@@ -56,13 +62,6 @@ final class Autoloader
      * are relative to $base_dir.
      */
     private $prefixes = [];
-
-    /**
-     * @var  string  $base_dir
-	 *
-     * The base directory for all autoloadable class paths.
-     */
-    private $base_dir = null;
 
     /**
      * Constructor.
@@ -112,7 +111,7 @@ final class Autoloader
      * @param   string  $class
      * @return  string|boolean
      */
-    public function load($class)
+    public function load(string $class)
     {
         // Work backwards through the namespace parts of the fully-qualified
         // class name, until find a mapped file name.
