@@ -29,10 +29,8 @@
  * For more information, please refer to <http://unlicense.org/>.
  *
  * @package     Nirvarnia\Autoloader
- * @author      PHP Framework Interoperability Group <https://github.com/php-fig/>
- * @author      Kieran Potts <hello@kieranpotts.com>
- * @link        https://github.com/nirvarnia/autoloader
- * @link        https://www.nirvarnia.org/
+ * @see         https://github.com/nirvarnia/autoloader
+ * @see         https://www.nirvarnia.org/
  */
 
 namespace Example\Tests;
