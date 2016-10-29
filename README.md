@@ -47,6 +47,7 @@ Example:
 
 The Nirvarnia Autoloader automatically registers itself as an SPL autoloader - there is no need to call `spl_autoload_register()`.
 
+
 ## Tests
 
 A full suite of unit tests are included in the ./tests/ directory. The tests require PHPUnit 5.3 or higher. If you are using Composer to manage your project's dependencies, PHPUnit will be installed automatically in development environments. To install PHPUnit manually, refer to the documentation on the PHPUnit website: https://phpunit.de/manual/current/en/installation.html.
