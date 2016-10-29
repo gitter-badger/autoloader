@@ -12,14 +12,6 @@ Enhancements:
 - xxx
 - xxx
 
-## 0.0.1 (YYY-MM-DD)
+## 1.0.0 (2016-10-29)
 
-Enhancements:
-- xxx
-- xxx
-- xxx
-
-- Bugfixes:
-- xxx
-- xxx
-- xxx
+Initial release.
