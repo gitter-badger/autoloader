@@ -1,7 +1,7 @@
 
 # Nirvarnia\Autoloader
 
-A simple PSR-4 compatible class loader. 
+A simple PSR-4 compatible class loader.
 
 Based on the demo PSR-4 autoloader provided by the PHP Framework Interoperability Group, the authors of the PSR-4 autoloading standard.
 
@@ -50,9 +50,11 @@ The Nirvarnia Autoloader automatically registers itself as an SPL autoloader - t
 
 ## Tests
 
-A full suite of unit tests are included in the ./tests/ directory. The tests require PHPUnit 5.3 or higher. If you are using Composer to manage your project's dependencies, PHPUnit will be installed automatically in development environments. To install PHPUnit manually, refer to the documentation on the PHPUnit website: https://phpunit.de/manual/current/en/installation.html.
+A full suite of unit tests are included in the ./tests/ directory. The tests require PHPUnit 5.3 or higher.
 
-To run the tests, type the following command from your project's root directory:
+If you are using Composer to manage your project's dependencies, PHPUnit will be installed automatically in development environments. To install PHPUnit manually, refer to the documentation on the PHPUnit website: https://phpunit.de/manual/current/en/installation.html.
+
+To run the tests, type the following command from the project's root directory:
 
     vendor/bin/phpunit
 

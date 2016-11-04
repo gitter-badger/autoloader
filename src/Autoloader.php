@@ -1,8 +1,8 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 /**
- * The Unlicense
- *
  * This is free and unencumbered software released into the public domain.
  *
  * Anyone is free to copy, modify, publish, use, compile, sell, or
@@ -26,9 +26,6 @@
  * ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
  * OTHER DEALINGS IN THE SOFTWARE.
  *
- * For more information, please refer to <http://unlicense.org/>.
- *
- * @package     Nirvarnia\Autoloader
  * @see         https://github.com/nirvarnia/autoloader
  * @see         https://www.nirvarnia.org/
  */
@@ -40,26 +37,19 @@ namespace Nirvarnia;
  */
 final class Autoloader
 {
-
     /**
-     * @const  VERSION   string
-     * Package version number
-     */
-    const VERSION = '1.0.0';
-
-    /**
-     * @var  string  $base_dir
-	 *
-     * The base directory for all autoloadable class paths.
+     * @var string
+     *
+     * The base directory for all autoloadable class paths
      */
     private $base_dir = null;
 
     /**
-     * @var  $prefixes  array
+     * @var array
      *
      * An associative array where the key is a namespace prefix and the value
      * is an array of directories for classes in that namespace. Directories
-     * are relative to $base_dir.
+     * are relative to $base_dir
      */
     private $prefixes = [];
 
@@ -83,18 +73,16 @@ final class Autoloader
     /**
      * Adds a base directory for a namespace prefix.
      *
-     * @param   string        $prefix     The namespace prefix.
-     * @param   string|array  $directory  One or more directories for class files in the namespace.
-     *
-     * @return  void
+     * @param string       $prefix    The namespace prefix
+     * @param string|array $directory One or more directories for class files in the namespace
      */
     public function register(string $prefix, $directory)
     {
         // Normalize the namespace prefix and the directory paths.
-        $prefix = trim($prefix, '\\') . '\\';
+        $prefix = trim($prefix, '\\').'\\';
         $directories = (array) $directory;
         foreach ($directories as &$directory) {
-            $directory = rtrim($directory, DIRECTORY_SEPARATOR) . '/';
+            $directory = rtrim($directory, DIRECTORY_SEPARATOR).'/';
         }
 
         $this->prefixes[$prefix] = $directories;
@@ -108,8 +96,9 @@ final class Autoloader
      * Returns the mapped file name on success, or boolean false if the class
      * could not be autoloaded.
      *
-     * @param   string  $class
-     * @return  string|boolean
+     * @param string $class
+     *
+     * @return string|bool
      */
     public function load(string $class)
     {
@@ -144,13 +133,14 @@ final class Autoloader
      * If a mapped file is successfully loaded, the name of the mapped file
      * is returned. If no mapped file can be loaded, boolean false is returned.
      *
-     * @param  string  $prefix          The namespace prefix.
-     * @param  string  $relative_class  The relative class name.
-     * @return string|boolean
+     * @param string $prefix         The namespace prefix
+     * @param string $relative_class The relative class name
+     *
+     * @return string|bool
      */
     protected function loadMappedFile($prefix, $relative_class)
     {
-        if ( ! array_key_exists($prefix, $this->prefixes)) {
+        if (!array_key_exists($prefix, $this->prefixes)) {
             return false;
         }
 
@@ -158,9 +148,9 @@ final class Autoloader
         // If a mapped file exists, require it and exit.
         foreach ($this->prefixes[$prefix] as $directory) {
             $file = $this->base_dir
-                  . $directory
-                  . str_replace('\\', '/', $relative_class)
-                  . '.php';
+                  .$directory
+                  .str_replace('\\', '/', $relative_class)
+                  .'.php';
             if ($this->requireFile($file)) {
                 return $file;
             }
@@ -172,8 +162,9 @@ final class Autoloader
     /**
      * If a file exists, require it from the file system.
      *
-     * @param  string  $file  The file to require.
-     * @return boolean        True if the file exists, false if not.
+     * @param string $file The file to require
+     *
+     * @return bool True if the file exists, false if not
      */
     protected function requireFile($file)
     {
@@ -183,5 +174,4 @@ final class Autoloader
         }
         return false;
     }
-
 }
