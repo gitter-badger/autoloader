@@ -77,5 +77,5 @@ To contribute to this project, please follow the instructions in the [CONTRIBUTI
 
 ## License
 
-This library is released under the MIT License. See the [LICENSE](LICENSE.txt) file for details.
+The source code for this package is in the public domain. See the [LICENSE](LICENSE.txt) file for details.
 
