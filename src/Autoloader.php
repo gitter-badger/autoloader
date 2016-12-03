@@ -1,6 +1,4 @@
-<?php
-
-declare(strict_types=1);
+<?php declare(strict_types=1);
 
 /**
  * This is free and unencumbered software released into the public domain.
@@ -26,8 +24,8 @@ declare(strict_types=1);
  * ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
  * OTHER DEALINGS IN THE SOFTWARE.
  *
- * @see         https://github.com/nirvarnia/autoloader
- * @see         https://www.nirvarnia.org/
+ * @see  https://github.com/nirvarnia/autoloader
+ * @see  https://www.nirvarnia.org/
  */
 
 namespace Nirvarnia;
