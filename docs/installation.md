@@ -6,7 +6,7 @@ This package is not available via the [Composer](https://getcomposer.org/) packa
 
 ## Option 1: Manual installation
 
-Download the source files from this projects [git repository](https://github.com/nirvarnia/autoloader). Copy the contents of the ./src/ directory to your project and `include` the Autoloader.php file.
+Download the source files from this project's [git repository](https://github.com/nirvarnia/autoloader). Copy the contents of the ./src/ directory to your project and `include` the Autoloader.php file.
 
 This package has no external dependencies.
 

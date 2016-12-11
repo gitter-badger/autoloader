@@ -9,4 +9,4 @@ A simple PSR-4 compatible class loader based on the demo PSR-4 autoloader provid
 * [Tests](docs/tests.md)
 * [Changelog](docs/changelog.md)
 * [Credits](docs/credits.md)
-* [How to contribute](docs/contributing.md)
+* [Contributing](docs/contributing.md)
