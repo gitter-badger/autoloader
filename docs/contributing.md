@@ -17,7 +17,7 @@ The original repository is referred to as the "upstream" repository, while your 
 
 This command creates a clone of your origin repository on your local development machine. This is referred to as the "local" repository.
 
-When you run the `clone` command, git will automatically add a remote named "origin", which you will push back to when you've made your changes locally (`fir push origin <branch>`).
+When you run the `clone` command, git will automatically add a remote named "origin", which you will push back to when you've made your changes locally (`git push origin <branch>`).
 
 
 **Step 3: Make your changes**
@@ -41,30 +41,22 @@ Include any tests and documentation that is relevant to the work you have done. 
 
 Don't build a cathedral in a feature branch. Try to limit changes in each feature branch to one very specific feature or fix. Pull requests for small, incremental improvements will get reviewed faster and will be easier to pull into the original project.
 
-In the rare instances when large features need to be developed over many months, it is important to have a meaningful commit history. Each commit, as much as possible, should be a single logical change. Commit titles should be less than 80 characters in length but may be accompanied by longer descriptions where necessary. Commiting your work in a series of discrete stages is a powerful way to express the evolution of a complex feature idea. Be sure to pull in changes from the upstream master branches at regular intervals so that your feature branch has the smallest possible diff.
+In the rare instances when large features need to be developed over many months, it is important to have a meaningful commit history. Each commit, as much as possible, should be a single logical change. Commit titles should be less than 80 characters in length but may be accompanied by longer descriptions where necessary. Commiting your work in a series of discrete stages is a powerful way to express the evolution of a complex feature idea.
 
-**Step 4: Prepare a pull request**
+Be sure to pull in changes from the upstream master branch at regular intervals. This will ensure that you have got the very latest code and, when it is time to issue your pull request, your feature branch will have the smallest possible diff that contains only _your_ changes. To do this, you will need to add another remote pointing back to the upstream repository.
 
-The next step is to issue a pull request to the maintainers of the original project repository. Before you do that, there are a few things to consider.
-
-If you have made lots of commits, you might want to use `git rebase` to condense your commit history before issuing a pull request. This will make it easier for the main project owners to understand what changes you've made.
-
-If you have spent a lot of time working on your new feature, you should synchronise your local feature branch with the original project repository, so that you've got the very latest code and to ensure that your pull request has a nice clean diff that contains only _your_ changes. To do this, you will need to add another remote pointing back to the original repository. You can call this remote anything you like, but it is conventional to name it "upstream". When you've done that, you'll be able to pull in the latest commits to the upstream repository's master branch.
-
-    git remote add upstream https://github.com/original-project/original-repo.git
+    git remote add upstream https://github.com/original-project/upstream-repo.git
     git pull upstream master
 
-Sort out any merge conflicts and check that everything still works. Push your final changes to your own remote "origin" repository.
 
-
-**Step 5: Issue a pull request**
+**Step 4: Issue a pull request**
 
 A pull request notifies the maintainers of the upstream repository, who will review your changes and, if the changes are approved, merge them into the main project.
 
 On GitHub, navigate to your feature branch and click "Pull Request". Follow the instructions to complete your pull request.
 
 
-**Step 6: Tidy up**
+**Step 5: Tidy up**
 
 You don't need to keep the local version of your feature branch, since it is hosted on GitHub now, so you can go ahead and delete it.
 
