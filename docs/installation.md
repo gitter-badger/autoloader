@@ -18,6 +18,6 @@ This package is also available from the [Nirvarnia PEAR channel](http://pear.nir
     pear channel-discover pear.nirvarnia.org
     pear install --alldeps nirvarnia/autoloader
 
-Remember, PEAR packages are not autoloaded. You must explicitly include the source files before you can use them.
+You must explicitly include the Autoloader.php file before you can use it.
 
-    require_once Nirvarnia/Autoloader;
+    require_once 'path/to/Nirvarnia/Autoloader.php';

@@ -4,12 +4,12 @@
 To contribute to this project, the "fork and branch" workflow is recommended:
 
 
-## Step 1: Go to this project's GitHub page and click "Fork"
+**Step 1: Go to this project's GitHub page and click "Fork"**
 
 A clone of this project's repository will be added to your GitHub account.
 
 
-## Step 2: Clone your new project's repository to a local host
+**Step 2: Clone your new project repository**
 
 The command to clone a repository is:
 
@@ -18,7 +18,7 @@ The command to clone a repository is:
 When you run the `clone` command, git will automatically add a remote named "origin", which you will push back to when you've made your changes locally.
 
 
-## Step 3: Make your changes
+**Step 3: Make your changes**
 
 Create a feature branch in your local repository. The GitFlow naming convention is popular. For example, to create a new branch named "feature/fix-for-issue-301" and to check it out:
 
@@ -37,6 +37,8 @@ After making changes locally, run the following commands to stage, commit and pu
 
 Limit each branch to one specific feature or fix. Include any tests and documentation that is relevant to the work you have done.
 
+**Step 4: Prepare a pull request**
+
 The next step is to issue a pull request to the maintainers of the original project repository. Before you do that, here are a couple of things to consider:
 
 If you have made lots of commits, you might want to use `git rebase` to condense your commit history before issuing a pull request. Rebasing is the process of moving a branch to a new base commit. This will make it easier for the main project owners to understand what changes you've made.
@@ -49,14 +51,14 @@ It's a good idea also to synchronise your local feature branch with the original
 Sort out any merge conflicts and check that everything still works. Push your final changes to your own remote "origin" repository.
 
 
-## Step 4: Issue a pull request
+**Step 5: Issue a pull request**
 
-A pull request notifies the maintainers of the upstream repository, who will consider your changes and merge them into the main project.
+A pull request notifies the maintainers of the upstream repository, who will review your changes and merge them into the main project.
 
 On GitHub.com, navigate to your feature branch and click "Pull Request". This will notify the maintainers of the upstream repository of your changes. If your changes are approved, they will be pulled into the main project.
 
 
-## Step 5: Tidy up
+**Step 6: Tidy up**
 
 You don't need to keep the local version of your feature branch, since it is hosted on GitHub.com now, so you can go ahead and delete it.
 
