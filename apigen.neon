@@ -1,5 +1,16 @@
 # ------------------------------------------------------------------------------
-# Configuration file for the ApiGen documentation generator.
+# This package's API is documented within the source code itself, via inline
+# comments that conform to the PSR-5 PHPDoc standard
+# (https://github.com/phpDocumentor/fig-standards/blob/master/proposed/phpdoc.md).
+#
+# ApiGen (http://www.apigen.org/) is used to check the quality of this package's
+# inline documentation. From the project's root directory, run the following
+# command to generate documentation from the source code. The documentation will
+# be installed in a new directory called ./apigen/.
+#
+#     apigen generate
+#
+# This is the configuration file for the ApiGen program.
 #
 # Supported options: accessLevels, annotationGroups, baseUrl, charset, config,
 # debug, deprecated, destination, download, exclude, extensions, googleAnalytics,
