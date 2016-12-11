@@ -1,11 +1,12 @@
-# Contributing
+
+# How to contribute
 
 To contribute to this project, the "fork and branch" workflow is recommended:
 
 
-## Step 1: Go to this project's Github page and click "Fork"
+## Step 1: Go to this project's GitHub page and click "Fork"
 
-A clone of this project's repository will be added to your Github account.
+A clone of this project's repository will be added to your GitHub account.
 
 
 ## Step 2: Clone your new project's repository to a local host
@@ -52,12 +53,12 @@ Sort out any merge conflicts and check that everything still works. Push your fi
 
 A pull request notifies the maintainers of the upstream repository, who will consider your changes and merge them into the main project.
 
-On Github.com, navigate to your feature branch and click "Pull Request". This will notify the maintainers of the upstream repository of your changes. If your changes are approved, they will be pulled into the main project.
+On GitHub.com, navigate to your feature branch and click "Pull Request". This will notify the maintainers of the upstream repository of your changes. If your changes are approved, they will be pulled into the main project.
 
 
 ## Step 5: Tidy up
 
-You don't need to keep the local version of your feature branch, since it is hosted on Github.com now, so you can go ahead and delete it.
+You don't need to keep the local version of your feature branch, since it is hosted on GitHub.com now, so you can go ahead and delete it.
 
     git checkout master
     git branch -d feature/fix-for-issue-301
