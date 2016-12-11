@@ -51,14 +51,14 @@ Be sure to pull in changes from the upstream master branch at regular intervals.
 
 **Step 4: Issue a pull request**
 
-A pull request notifies the maintainers of the upstream repository, who will review your changes and, if the changes are approved, merge them into the main project.
+A pull request notifies the maintainers of the upstream repository, who will review your changes and, if the changes are approved, merge them into the main upstream project.
 
-On GitHub, navigate to your feature branch and click "Pull Request". Follow the instructions to complete your pull request.
+On GitHub, navigate to your feature branch and click "Pull Request". Follow the instructions to complete the pull request.
 
 
 **Step 5: Tidy up**
 
-You don't need to keep the local version of your feature branch, since it is hosted on GitHub now, so you can go ahead and delete it.
+You don't need to keep the local version of your feature branch, since it is hosted on GitHub.
 
     git checkout master
     git branch -d feature/fix-for-issue-301
