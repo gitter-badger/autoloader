@@ -1,13 +1,11 @@
-# APIGEN OUTPUT
+# Exclude ApiGen output, temporary files, and dependencies:
+
 /apigen
-
-# WORKING FILES
-/todo
-
-# DEPENDENCIES
+/temp
 /vendor
 
-# SYSTEM FILES
+# Exclude these common system files:
+
 Thumbs.db
 .DS_Store
 .cvs
