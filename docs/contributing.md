@@ -41,7 +41,7 @@ Include any tests and documentation that is relevant to the work you have done. 
 
 Don't build a cathedral in a feature branch. Try to limit changes in each feature branch to one very specific feature or fix. Pull requests for small, incremental improvements will get reviewed faster and will be easier to pull into the original project.
 
-In the rare instances when large features need to be developed over many months, it is important to have a meaningful commit history. Each commit, as much as possible, should be a single logical change. Commit titles should be less than 80 characters in length but may be accompanied by longer descriptions where necessary. Commiting your work in a series of discrete stages is a powerful way to express the evolution of a complex feature idea.
+If you are working on a big update that touches lots of modules, it is important to have a meaningful commit history. Each commit, as much as possible, should be a single logical change. Commit titles should be less than 80 characters in length but may be accompanied by longer descriptions where necessary. Commiting your work in a series of discrete stages is a powerful way to express the evolution of a complex feature idea.
 
 Be sure to pull in changes from the upstream master branch at regular intervals. This will ensure that you have got the very latest code and, when it is time to issue your pull request, your feature branch will have the smallest possible diff that contains only _your_ changes. To do this, you will need to add another remote pointing back to the upstream repository.
 
