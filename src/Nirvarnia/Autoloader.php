@@ -38,7 +38,7 @@ final class Autoloader
     /**
      * @var string
      *
-     * The base directory for all autoloadable class paths
+     * The base directory for all autoloadable class paths.
      */
     private $base_dir = null;
 
@@ -47,7 +47,7 @@ final class Autoloader
      *
      * An associative array where the key is a namespace prefix and the value
      * is an array of directories for classes in that namespace. Directories
-     * are relative to $base_dir
+     * are relative to $base_dir.
      */
     private $prefixes = [];
 
@@ -71,12 +71,15 @@ final class Autoloader
     /**
      * Adds a base directory for a namespace prefix.
      *
-     * @param string       $prefix    The namespace prefix
-     * @param string|array $directory One or more directories for class files in the namespace
+     * @param   string        $prefix     The namespace prefix.
+     * @param   string|array  $directory  One or more directories for class files in the namespace.
+     *
+     * @return  void
      */
     public function register(string $prefix, $directory)
     {
         // Normalize the namespace prefix and the directory paths.
+
         $prefix = trim($prefix, '\\').'\\';
         $directories = (array) $directory;
         foreach ($directories as &$directory) {
@@ -94,31 +97,37 @@ final class Autoloader
      * Returns the mapped file name on success, or boolean false if the class
      * could not be autoloaded.
      *
-     * @param string $class
+     * @param   string  $class
      *
-     * @return string|bool
+     * @return  string|bool
      */
     public function load(string $class)
     {
         // Work backwards through the namespace parts of the fully-qualified
         // class name, until find a mapped file name.
+
         $prefix = $class;
         while (false !== $pos = strrpos($prefix, '\\')) {
 
             // Retain the trailing namespace separator in the prefix.
+
             $prefix = substr($class, 0, $pos + 1);
 
             // The rest is the relative class name.
+
             $relative_class = substr($class, $pos + 1);
 
             // Try to load a mapped file for the prefix + relative class.
+
             $mapped_file = $this->loadMappedFile($prefix, $relative_class);
             if ($mapped_file) {
+
                 return $mapped_file;
             }
 
             // Remove the trailing namespace separator for the next iteration
             // of strrpos().
+
             $prefix = rtrim($prefix, '\\');
         }
 
@@ -126,30 +135,35 @@ final class Autoloader
     }
 
     /**
-     * Load the mapped file for a namespace prefix and relative class.
+     * Loads the mapped file for a namespace prefix and relative class.
      *
      * If a mapped file is successfully loaded, the name of the mapped file
      * is returned. If no mapped file can be loaded, boolean false is returned.
      *
-     * @param string $prefix         The namespace prefix
-     * @param string $relative_class The relative class name
+     * @param   string  $prefix          The namespace prefix.
+     * @param   string  $relative_class  The relative class name.
      *
-     * @return string|bool
+     * @return  string|bool
      */
     protected function loadMappedFile($prefix, $relative_class)
     {
         if (!array_key_exists($prefix, $this->prefixes)) {
+
             return false;
         }
 
         // Look through the base directories for this namespace prefix.
         // If a mapped file exists, require it and exit.
+
         foreach ($this->prefixes[$prefix] as $directory) {
+
             $file = $this->base_dir
                   .$directory
                   .str_replace('\\', '/', $relative_class)
                   .'.php';
+
             if ($this->requireFile($file)) {
+
                 return $file;
             }
         }
@@ -160,16 +174,18 @@ final class Autoloader
     /**
      * If a file exists, require it from the file system.
      *
-     * @param string $file The file to require
+     * @param   string  $file  The file to require.
      *
-     * @return bool True if the file exists, false if not
+     * @return  bool           True if the file exists, false if not.
      */
     protected function requireFile($file)
     {
         if (file_exists($file)) {
             require $file;
+
             return true;
         }
+
         return false;
     }
 }
