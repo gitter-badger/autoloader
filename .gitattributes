@@ -21,7 +21,7 @@
 # which will include Composer installs with --prefer-dist.
 
 /docs export-ignore
-/stubs export-ignore
+/mocks export-ignore
 /tests export-ignore
 
 /.gitattributes export-ignore
