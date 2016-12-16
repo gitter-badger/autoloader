@@ -7,4 +7,6 @@ If you are using Composer to manage your project's dependencies, PHPUnit will be
 
 To run the tests, type the following command from this project's root directory:
 
-    vendor/bin/phpunit
+```bash
+vendor/bin/phpunit
+```
