@@ -5,8 +5,11 @@ matrix:
     - php: 7.0
     - php: 7.1
     - php: nightly
-    - php: hhvm
+    - php: hhvm-stable
       env: HACKLANG="yes"
+      sudo: required
+      dist: trusty
+      group: edge
   allow_failures:
     - php: nightly
 
