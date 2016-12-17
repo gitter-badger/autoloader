@@ -1,6 +1,25 @@
 language: php
 
-php:
-  - 7.0
-  - 7.1
-  - hhvm
+matrix:
+  include:
+    - php: 7.0
+    - php: 7.1
+    - php: nightly
+    - php: hhvm-stable
+      env: HACKLANG="yes"
+      sudo: required
+      dist: trusty
+      group: edge
+  allow_failures:
+    - php: nightly
+
+before_script:
+  - if [[ $HACKLANG == "yes" ]]; then echo hhvm.php7.all=1 >> /etc/hhvm/php.ini; fi
+
+script:
+  - phpunit
+
+branches:
+  only:
+    - develop
+    - master

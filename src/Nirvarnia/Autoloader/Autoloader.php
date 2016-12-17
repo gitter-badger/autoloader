@@ -145,7 +145,7 @@ final class Autoloader
      *
      * @return  string|bool
      */
-    protected function loadMappedFile($prefix, $relative_class)
+    protected function loadMappedFile(string $prefix, string $relative_class)
     {
         if (!array_key_exists($prefix, $this->prefixes)) {
 
@@ -178,7 +178,7 @@ final class Autoloader
      *
      * @return  bool           True if the file exists, false if not.
      */
-    protected function requireFile($file)
+    protected function requireFile(string $file) : bool
     {
         if (file_exists($file)) {
             require $file;
