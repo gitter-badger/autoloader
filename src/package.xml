@@ -16,11 +16,11 @@
         <email>hello@kieranpotts.com</email>
         <active>yes</active>
     </lead>
-    <date>2016-12-11</date>
-    <time>12:00:00</time>
+    <date>2016-12-17</date>
+    <time>11:00:00</time>
     <version>
-        <release>1.0.1</release>
-        <api>1.0.1</api>
+        <release>2.0.0</release>
+        <api>2.0.0</api>
     </version>
     <stability>
         <release>stable</release>
@@ -47,8 +47,20 @@
     <changelog>
         <release>
             <version>
+                <release>2.0.0</release>
+                <api>1.0.0</api>
+            </version>
+            <stability>
+                <release>stable</release>
+                <api>stable</api>
+            </stability>
+            <date>2016-12-17</date>
+            <license uri="https://mit-license.org/">MIT License</license>
+        </release>
+        <release>
+            <version>
                 <release>1.0.1</release>
-                <api>1.0.1</api>
+                <api>1.0.0</api>
             </version>
             <stability>
                 <release>stable</release>
