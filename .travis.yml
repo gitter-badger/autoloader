@@ -11,12 +11,11 @@ env:
     - HACK=0
 
 matrix:
-  include:
-    - php: hhvm-nightly
-      env: HACK=1
   allow_failures:
     - php: nightly
+  include:
+    - php: hhvm
       env: HACK=1
 
-before_script: "if [ \"$HACK\" = \"1\" ]; then hhvm -vEval.EnableHipHopSyntax=true; fi"
+before_script: "if [ \"$HACK\" = \"1\" ]; then hhvm -v Eval.EnableHipHopSyntax=true; fi"
 script: phpunit
