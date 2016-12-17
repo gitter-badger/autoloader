@@ -11,7 +11,7 @@ Add the following to your project's composer.json file then run ``composer updat
 ```json
 {
     "require": {
-        "nirvarnia/autoloader": "^1.0"
+        "nirvarnia/autoloader": "^2.0"
     }
 }
 ```
@@ -19,7 +19,7 @@ Add the following to your project's composer.json file then run ``composer updat
 Alternatively, run the following command:
 
 ```bash
-composer require nirvarnia/autoloader:^1.0
+composer require nirvarnia/autoloader:^2.0
 ```
 
 
