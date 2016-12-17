@@ -4,5 +4,12 @@ php:
   - 7.0
   - 7.1
   - hhvm
+  - nightly
 
-script: phpunit
+matrix:
+  allow_failures:
+    - php: nightly
+
+script:
+  - hhvm -v Eval.EnableHipHopSyntax=true
+  - phpunit
