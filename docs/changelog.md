@@ -2,6 +2,11 @@
 # Changelog
 
 
+## 2.0.0 (2016-12-17)
+
+* Change of namespace to support Composer.
+
+
 ## 1.0.2 (2016-12-16)
 
 * Unit tests added.
