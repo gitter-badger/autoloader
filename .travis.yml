@@ -10,6 +10,5 @@ matrix:
   allow_failures:
     - php: nightly
 
-script:
-  - hhvm -v Eval.EnableHipHopSyntax=true
-  - phpunit
+before_script: hhvm -vEval.EnableHipHopSyntax=true
+script: phpunit
