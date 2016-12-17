@@ -6,9 +6,16 @@ php:
   - hhvm
   - nightly
 
+env:
+  matrix:
+    - HACK=0
+
 matrix:
+  include:
+    - php: hhvm-nightly
+      env: HACK=1
   allow_failures:
     - php: nightly
 
-before_script: hhvm -vEval.EnableHipHopSyntax=true
+before_script: "if [ \"$HACK\" = \"1\" ]; then hhvm -vEval.EnableHipHopSyntax=true;"
 script: phpunit
