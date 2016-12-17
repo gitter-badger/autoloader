@@ -62,7 +62,7 @@ final class Autoloader
      *
      * @params  string|null  $base_dir
      */
-    public function __construct(string $base_dir = null)
+    public function __construct(\string $base_dir = null)
     {
         $this->base_dir = ($base_dir ? $base_dir : get_include_path());
         spl_autoload_register(array($this, 'load'));
@@ -76,7 +76,7 @@ final class Autoloader
      *
      * @return  void
      */
-    public function register(string $prefix, $directory)
+    public function register(\string $prefix, $directory)
     {
         // Normalize the namespace prefix and the directory paths.
 
@@ -101,7 +101,7 @@ final class Autoloader
      *
      * @return  string|bool
      */
-    public function load(string $class)
+    public function load(\string $class)
     {
         // Work backwards through the namespace parts of the fully-qualified
         // class name, until find a mapped file name.
@@ -145,7 +145,7 @@ final class Autoloader
      *
      * @return  string|bool
      */
-    protected function loadMappedFile($prefix, $relative_class)
+    protected function loadMappedFile(\string $prefix, \string $relative_class)
     {
         if (!array_key_exists($prefix, $this->prefixes)) {
 
@@ -178,7 +178,7 @@ final class Autoloader
      *
      * @return  bool           True if the file exists, false if not.
      */
-    protected function requireFile($file)
+    protected function requireFile(\string $file) : bool
     {
         if (file_exists($file)) {
             require $file;
