@@ -14,7 +14,7 @@ matrix:
     - php: nightly
 
 before_script:
-  - if [[ $HACKLANG == "yes" ]]; then hhvm --php -r 'ini_set("hhvm.php7.all", 1);'; fi
+  - if [[ $HACKLANG == "yes" ]]; then echo hhvm.php7.all=1 >> /etc/hhvm/php.ini; fi
 
 script:
   - phpunit
