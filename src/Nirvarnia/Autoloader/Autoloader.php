@@ -28,7 +28,7 @@
  * @see  https://www.nirvarnia.org/
  */
 
-namespace Nirvarnia;
+namespace Nirvarnia\Autoloader;
 
 /**
  * Minimalist PSR-4 compatible autoloading mechanism.

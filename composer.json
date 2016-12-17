@@ -1,0 +1,25 @@
+{
+    "name": "nirvarnia/autoloader",
+    "type": "library",
+    "description": "Minimalist PSR-4 compatible autoloading mechanism ",
+    "keywords": ["exceptions"],
+    "homepage": "https://github.com/nirvarnia/autoloder",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Kieran Potts",
+            "email": "hello@kieranpotts.com",
+            "homepage": "https://www.kieranpotts.com/",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=7.0.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~5.3"
+    },
+    "autoload": {
+        "psr-4": {"Nirvarnia\\Autoloader\\": "src/Nirvarnia/Autoloader/"}
+    }
+}
