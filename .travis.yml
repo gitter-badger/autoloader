@@ -10,8 +10,10 @@ matrix:
   allow_failures:
     - php: nightly
 
+sudo: required
+
 before_script:
-  - bash -c "if [ '$TRAVIS_PHP_VERSION' = 'hhvm' ]; then hhvm -vEval.EnableHipHopSyntax=true; fi"
+  - sh -c 'if [ "$TRAVIS_PHP_VERSION" = "hhvm" ]; then hhvm -v Eval.EnableHipHopSyntax=true; fi'
 
 script:
   - phpunit
