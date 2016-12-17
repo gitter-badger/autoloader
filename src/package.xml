@@ -30,7 +30,7 @@
     <notes>No release notes.</notes>
     <contents>
         <dir name="/">
-            <file name="Nirvarnia/Autoloader.php" role="php"></file>
+            <file name="Nirvarnia/Autoloader/Autoloader.php" role="php"></file>
         </dir>
     </contents>
     <dependencies>

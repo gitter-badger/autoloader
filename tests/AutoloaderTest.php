@@ -28,7 +28,7 @@
  * @see  https://www.nirvarnia.org/
  */
 
-use Nirvarnia\Autoloader;
+use Nirvarnia\Autoloader\Autoloader;
 
 class AutoloaderTest extends PHPUnit_Framework_TestCase
 {

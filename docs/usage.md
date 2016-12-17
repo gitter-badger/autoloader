@@ -2,7 +2,9 @@
 # Usage
 
 ```php
-$autoloader = new \Nirvarnia\Autoloader($base_dir);
+use Nirvarnia\Autoloader\Autoloader;
+
+$autoloader = new Autoloader($base_dir);
 $autoload->register($prefix, $directory);
 ```
 
@@ -20,7 +22,7 @@ Example:
 
 ```php
 $base_dir = dirname(dirname(__FILE__));
-$autoloader = new \Nirvarnia\Autoloader($base_dir);
+$autoloader = new \Nirvarnia\Autoloader\Autoloader($base_dir);
 
 $autoloader->register('Carbon', '/vendor/nesbot/carbon/src/Carbon');
 $autoloader->register('Monolog', '/vendor/monolog/monolog/src/Monolog');
