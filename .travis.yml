@@ -14,7 +14,9 @@ matrix:
     - php: nightly
 
 before_script:
-  - if [[ $HACKLANG == "yes" ]]; then echo hhvm.php7.all=1 >> /etc/hhvm/php.ini; fi
+  - if [[ $HACKLANG == "yes" ]]; then
+      echo hhvm.php7.all=1 >> /etc/hhvm/php.ini;
+    fi
 
 script:
   - phpunit
@@ -23,3 +25,9 @@ branches:
   only:
     - develop
     - master
+
+git:
+  depth: 5
+
+notifications:
+  email: false
