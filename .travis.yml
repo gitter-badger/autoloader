@@ -17,9 +17,14 @@ before_script:
   - if [[ $PHP7MODE == "yes" ]]; then
       echo hhvm.php7.all=1 >> /etc/hhvm/php.ini;
     fi
+  - curl -s http://getcomposer.org/installer | php
+  - php composer.phar install -n
 
 script:
-  - phpunit
+  - php vendor/bin/phpunit
+
+after_script:
+  - php vendor/bin/codacycoverage clover tmp/coverage.xml
 
 branches:
   only:
