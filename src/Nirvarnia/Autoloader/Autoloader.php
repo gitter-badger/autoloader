@@ -106,29 +106,20 @@ final class Autoloader
         // Work backwards through the namespace parts of the fully-qualified
         // class name, until find a mapped file name.
 
+        // #1 Retain the trailing namespace separator in the prefix.
+        // #2 The rest is the relative class name.
+        // #3 Try to load a mapped file for the prefix + relative class.
+        // #4 Remove the trailing namespace separator for the next loop.
+
         $prefix = $class;
         while (false !== $pos = strrpos($prefix, '\\')) {
-
-            // Retain the trailing namespace separator in the prefix.
-
-            $prefix = substr($class, 0, $pos + 1);
-
-            // The rest is the relative class name.
-
-            $relative_class = substr($class, $pos + 1);
-
-            // Try to load a mapped file for the prefix + relative class.
-
-            $mapped_file = $this->loadMappedFile($prefix, $relative_class);
+            $prefix = substr($class, 0, $pos + 1); // #1
+            $relative_class = substr($class, $pos + 1); // #2
+            $mapped_file = $this->loadMappedFile($prefix, $relative_class); // #3
             if ($mapped_file) {
-
                 return $mapped_file;
             }
-
-            // Remove the trailing namespace separator for the next iteration
-            // of strrpos().
-
-            $prefix = rtrim($prefix, '\\');
+            $prefix = rtrim($prefix, '\\'); // #4
         }
 
         return false;
@@ -148,7 +139,6 @@ final class Autoloader
     protected function loadMappedFile(string $prefix, string $relative_class)
     {
         if (!array_key_exists($prefix, $this->prefixes)) {
-
             return false;
         }
 
@@ -156,14 +146,11 @@ final class Autoloader
         // If a mapped file exists, require it and exit.
 
         foreach ($this->prefixes[$prefix] as $directory) {
-
             $file = $this->base_dir
                   .$directory
                   .str_replace('\\', '/', $relative_class)
                   .'.php';
-
             if ($this->requireFile($file)) {
-
                 return $file;
             }
         }
@@ -182,7 +169,6 @@ final class Autoloader
     {
         if (file_exists($file)) {
             require $file;
-
             return true;
         }
 
