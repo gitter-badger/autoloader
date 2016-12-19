@@ -7,6 +7,13 @@ engines:
           mass_threshold: 28
   fixme:
     enabled: true
+    config:
+      strings:
+      - BUG
+      - DEPRECATED
+      - FIXME
+      - HACK
+      - IMPROVE
   phpcodesniffer:
     enabled: true
     config:
