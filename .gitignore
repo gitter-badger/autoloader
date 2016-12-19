@@ -1,7 +1,7 @@
 # Exclude ApiGen output, temporary files, and dependencies:
 
 /apigen
-/temp
+/tmp
 /vendor
 
 # Exclude these common system files:
