@@ -11,6 +11,8 @@ engines:
     checks:
       Controversial/CamelCasePropertyName:
         enabled: false
+    exclude_fingerprints:
+    - 4f5bb0365a50f0a8f6350e0548361210
 ratings:
   paths:
   - "**.php"
