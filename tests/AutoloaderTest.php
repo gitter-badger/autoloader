@@ -29,8 +29,9 @@
  */
 
 use Nirvarnia\Autoloader\Autoloader;
+use PHPUnit\Framework\TestCase;
 
-class AutoloaderTest extends PHPUnit_Framework_TestCase
+class AutoloaderTest extends TestCase
 {
     protected $loader;
 
