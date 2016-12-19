@@ -8,6 +8,7 @@ engines:
   fixme:
     enabled: true
     config:
+      file_extensions: "php"
       strings:
       - BUG
       - DEPRECATED
@@ -24,10 +25,7 @@ engines:
     enabled: true
     config:
       file_extensions: "php"
-      rulesets: "cleancode,codesize,controversial,design,naming,unusedcode"
-    checks:
-      Controversial/CamelCasePropertyName:
-        enabled: false
+      rulesets: "cleancode,codesize,design,naming,unusedcode"
 ratings:
   paths:
   - "**.php"
