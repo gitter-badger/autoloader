@@ -23,7 +23,6 @@ script:
 
 branches:
   only:
-    - develop
     - master
 
 git:
