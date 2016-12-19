@@ -58,7 +58,7 @@ class AutoloaderTest extends PHPUnit_Framework_TestCase
     public function testLoadMissing()
     {
         $this->setExpectedException(Error::class);
-        $baz = new Baz\Baz();
+        new Baz\Baz();
     }
 
     public function testAutoloadFunctions()
