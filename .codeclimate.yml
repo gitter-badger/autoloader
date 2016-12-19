@@ -34,4 +34,4 @@ ratings:
 exclude_paths:
 - docs/**/*
 - mocks/**/*
-- test/**/*
+- tests/**/*
