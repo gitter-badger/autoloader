@@ -14,11 +14,11 @@ matrix:
     - php: nightly
 
 before_script:
-  - curl -s http://getcomposer.org/installer | php
-  - php composer.phar install -n
   - if [[ $PHP7MODE == "yes" ]]; then
       echo hhvm.php7.all=1 >> /etc/hhvm/php.ini;
     fi
+  - curl -s http://getcomposer.org/installer | php
+  - php composer.phar install -n
 
 script:
   - php vendor/bin/phpunit
