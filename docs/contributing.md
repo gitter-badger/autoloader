@@ -24,7 +24,7 @@ Follow these guidelines when reporting a new issue:
 * Provide screenshots or a video, if applicable.
 * File one issue at a time.
 
-Please do not use the issue trackers for support requests. [StackOverflow](http://stackoverflow.com/) is a good place for that. Questions should be [tagged "nirvarnia"](http://stackoverflow.com/questions/tagged/nirvarnia).
+Please do not use the issue trackers for support requests. There are [better channels](support.md) for those.
 
 
 ## Suggest features
