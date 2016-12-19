@@ -1,6 +1,8 @@
 
 # nirvarnia/autoloader
 
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/ebbdb88437294774a874e0bb4cad9e30)](https://www.codacy.com/app/hello_39/autoloader?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=nirvarnia/autoloader&amp;utm_campaign=badger)
 [![License](https://img.shields.io/packagist/l/nirvarnia/autoloader.svg?style=flat-square)](https://packagist.org/packages/nirvarnia/autoloader)
 [![Latest Stable Version](https://poser.pugx.org/nirvarnia/autoloader/version?format=flat-square)](https://packagist.org/packages/nirvarnia/autoloader)
 [![Build Status](https://img.shields.io/travis/nirvarnia/autoloader/master.svg?style=flat-square)](https://travis-ci.org/nirvarnia/autoloader)
