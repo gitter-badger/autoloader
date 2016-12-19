@@ -3,20 +3,28 @@ engines:
     enabled: true
     config:
       languages:
-      - php
+        php:
+          mass_threshold: 28
   fixme:
     enabled: true
+  phpcodesniffer:
+    enabled: true
+    config:
+      file_extensions: "php"
+      standard: "PSR1,PSR2"
+      ignore_warnings: false
   phpmd:
     enabled: true
+    config:
+      file_extensions: "php"
+      rulesets: "cleancode,codesize,controversial,design,naming,unusedcode"
     checks:
       Controversial/CamelCasePropertyName:
         enabled: false
-    exclude_fingerprints:
-    - 4f5bb0365a50f0a8f6350e0548361210
 ratings:
   paths:
   - "**.php"
 exclude_paths:
-  - docs/
-  - mocks/
-  - tests/
+- docs/**/*
+- mocks/**/*
+- test/**/*
