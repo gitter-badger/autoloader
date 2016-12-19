@@ -17,7 +17,7 @@ matrix:
       dist: trusty
       group: edge
   allow_failures:
-    - php: hhvm
+    - php: hhvm-stable
     - php: nightly
   fast_finish: true
 
