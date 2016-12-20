@@ -39,3 +39,5 @@ exclude_paths:
 - docs/**/*
 - mocks/**/*
 - tests/**/*
+- tmp/**/*
+- vendors/**/*
