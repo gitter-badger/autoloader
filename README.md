@@ -6,6 +6,7 @@
 [![Total Downloads on Packagist](https://img.shields.io/packagist/dt/nirvarnia/autoloader.svg?colorA=333333&colorB=0099ff&style=flat-square)](https://packagist.org/packages/nirvarnia/autoloader)
 [![Travis Build Status](https://img.shields.io/travis/nirvarnia/autoloader/master.svg?colorA=333333&colorB=0099ff&style=flat-square)](https://travis-ci.org/nirvarnia/autoloader)
 [![Code Climate Quality Score](https://img.shields.io/codeclimate/github/nirvarnia/autoloader.svg?label=linting&colorA=333333&&colorB=0099ff&style=flat-square)](https://codeclimate.com/github/nirvarnia/autoloader)
+[![Coveralls Test Coverage](https://img.shields.io/coveralls/nirvarnia/autoloader.svg?colorA=333333&colorB=0099ff&style=flat-square)](https://coveralls.io/github/nirvarnia/autoloader)
 
 A simple PSR-4 compatible class loader based on the demo PSR-4 autoloader provided by the PHP Framework Interoperability Group.
 
