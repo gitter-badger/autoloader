@@ -1,11 +1,11 @@
 
 # nirvarnia/autoloader
 
-[![License](https://img.shields.io/github/license/nirvarnia/autoloader.svg?style=flat-square)](LICENSE.md)
-[![Latest Stable Version](https://poser.pugx.org/nirvarnia/autoloader/version?format=flat-square)](https://packagist.org/packages/nirvarnia/autoloader)
-[![Build Status](https://img.shields.io/travis/nirvarnia/autoloader/master.svg?style=flat-square)](https://travis-ci.org/nirvarnia/autoloader)
-[![Code Climate](https://img.shields.io/codeclimate/github/nirvarnia/autoloader.svg)](https://codeclimate.com/github/nirvarnia/autoloader)
-[![Total Downloads](https://poser.pugx.org/nirvarnia/autoloader/downloads?format=flat-square)](https://packagist.org/packages/nirvarnia/autoloader)
+[![License](https://img.shields.io/github/license/nirvarnia/autoloader.svg?colorA=333333&colorB=0099ff&style=flat-square)](LICENSE.md)
+[![Latest Release](https://img.shields.io/github/release/nirvarnia/autoloader.svg?colorA=333333&colorB=0099ff&style=flat-square)](https://github.com/nirvarnia/autoloader/releases)
+[![Total Downloads on Packagist](https://img.shields.io/packagist/dt/nirvarnia/autoloader.svg?colorA=333333&colorB=0099ff&style=flat-square)](https://packagist.org/packages/nirvarnia/autoloader)
+[![Travis Build Status](https://img.shields.io/travis/nirvarnia/autoloader/master.svg?colorA=333333&colorB=0099ff&style=flat-square)](https://travis-ci.org/nirvarnia/autoloader)
+[![Code Climate Quality Score](https://img.shields.io/codeclimate/github/nirvarnia/autoloader.svg?label=linting&colorA=333333&&colorB=0099ff&style=flat-square)](https://codeclimate.com/github/nirvarnia/autoloader)
 
 A simple PSR-4 compatible class loader based on the demo PSR-4 autoloader provided by the PHP Framework Interoperability Group.
 
