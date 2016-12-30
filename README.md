@@ -1,5 +1,8 @@
+[![Nirvarnia](https://raw.githubusercontent.com/nirvarnia/logo/master/build/nirvarnia-logo.210x60.png)](https://www.nirvarnia.org/)
 
-# nirvarnia/autoloader
+# Nirvarnia Autoloader
+
+A simple PSR-4 compatible class loader based on the demo PSR-4 autoloader provided by the PHP Framework Interoperability Group.
 
 [![License](https://img.shields.io/github/license/nirvarnia/autoloader.svg?colorA=333333&colorB=0099ff&style=flat-square)](LICENSE.md)
 [![Latest Release](https://img.shields.io/github/release/nirvarnia/autoloader.svg?colorA=333333&colorB=0099ff&style=flat-square)](https://github.com/nirvarnia/autoloader/releases)
@@ -7,8 +10,6 @@
 [![Travis Build Status](https://img.shields.io/travis/nirvarnia/autoloader/master.svg?colorA=333333&colorB=0099ff&style=flat-square)](https://travis-ci.org/nirvarnia/autoloader)
 [![Code Climate Quality Score](https://img.shields.io/codeclimate/github/nirvarnia/autoloader.svg?label=linting&colorA=333333&&colorB=0099ff&style=flat-square)](https://codeclimate.com/github/nirvarnia/autoloader)
 [![Coveralls Test Coverage](https://img.shields.io/coveralls/nirvarnia/autoloader.svg?colorA=333333&colorB=0099ff&style=flat-square)](https://coveralls.io/github/nirvarnia/autoloader)
-
-A simple PSR-4 compatible class loader based on the demo PSR-4 autoloader provided by the PHP Framework Interoperability Group.
 
 * [Requirements](https://github.com/nirvarnia/docs/blob/master/src/v1/requirements.md)
 * [Installation](https://github.com/nirvarnia/docs/blob/master/src/v1/installation.md)
