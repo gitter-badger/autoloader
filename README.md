@@ -1,6 +1,5 @@
-[![Nirvarnia](https://raw.githubusercontent.com/nirvarnia/logo/master/build/nirvarnia-logo.210x60.png)](https://www.nirvarnia.org/)
 
-# Nirvarnia Autoloader
+[![Nirvarnia](https://raw.githubusercontent.com/nirvarnia/logo/master/build/nirvarnia-logo.210x60.png)](https://www.nirvarnia.org/)
 
 A simple PSR-4 compatible class loader based on the demo PSR-4 autoloader provided by the PHP Framework Interoperability Group.
 
