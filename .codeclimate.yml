@@ -33,7 +33,7 @@ exclude_paths:
 - apigen.neon
 - composer.json
 - composer.lock
-- LICENSE.txt
+- LICENSE.md
 - phpunit.xml
 - README.md
 - docs/**/*
