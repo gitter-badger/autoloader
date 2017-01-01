@@ -8,19 +8,19 @@
     http://pear.php.net/dtd/package-2.0.xsd">
     <name>autoloader</name>
     <channel>pear.nirvarnia.org</channel>
-    <summary>Minimalist PSR-4 compatible autoloading mechanism.</summary>
-    <description>This package contains a single class which can be used to autoload classes using the PSR-4 system.</description>
+    <summary>Class autoloading system that implements the PSR-4 standard</summary>
+    <description>This package contains a single class which can be used to autoload classes using the PSR-4 standard.</description>
     <lead>
         <name>Kieran Potts</name>
         <user>kieranpotts</user>
         <email>hello@kieranpotts.com</email>
         <active>yes</active>
     </lead>
-    <date>2016-12-17</date>
-    <time>11:00:00</time>
+    <date>2017-01-01</date>
+    <time>12:00:00</time>
     <version>
-        <release>2.0.0</release>
-        <api>2.0.0</api>
+        <release>1.0.0</release>
+        <api>1.0.0</api>
     </version>
     <stability>
         <release>stable</release>
@@ -47,26 +47,14 @@
     <changelog>
         <release>
             <version>
-                <release>2.0.0</release>
+                <release>1.0.0</release>
                 <api>1.0.0</api>
             </version>
             <stability>
                 <release>stable</release>
                 <api>stable</api>
             </stability>
-            <date>2016-12-17</date>
-            <license uri="https://mit-license.org/">MIT License</license>
-        </release>
-        <release>
-            <version>
-                <release>1.0.1</release>
-                <api>1.0.0</api>
-            </version>
-            <stability>
-                <release>stable</release>
-                <api>stable</api>
-            </stability>
-            <date>2016-12-11</date>
+            <date>2017-01-01</date>
             <license uri="https://mit-license.org/">MIT License</license>
         </release>
     </changelog>
