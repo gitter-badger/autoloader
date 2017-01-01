@@ -26,7 +26,7 @@ source:
     - src/
 
 # Target directory for the documentation.
-destination: apigen/
+destination: docs/
 
 # Character encoding of source files.
 charset:
