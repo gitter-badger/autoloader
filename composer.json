@@ -1,7 +1,7 @@
 {
     "name": "nirvarnia/autoloader",
     "type": "library",
-    "description": "Minimalist PSR-4 compatible autoloading mechanism ",
+    "description": "Class autoloading system that implements the PSR-4 standard",
     "keywords": ["exceptions"],
     "homepage": "https://github.com/nirvarnia/autoloder",
     "license": "MIT",
