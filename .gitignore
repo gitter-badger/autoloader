@@ -1,10 +1,9 @@
-# Exclude ApiGen output, temporary files, and dependencies:
+# Exclude temporary files and dependencies.
 
-/api
 /tmp
 /vendor
 
-# Exclude these common system files:
+# Exclude common system files.
 
 Thumbs.db
 .DS_Store
