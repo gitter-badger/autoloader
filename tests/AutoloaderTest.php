@@ -21,20 +21,20 @@ class AutoloaderTest extends TestCase
 
     public function testLoadFoo()
     {
-        $foo = new Foo\Foo();
+        $foo = new \Foo\Foo();
         $this->assertInstanceOf('Foo\Foo', $foo);
     }
 
     public function testLoadBar()
     {
-        $bar = new Bar\Bar();
+        $bar = new \Bar\Bar();
         $this->assertInstanceOf('Bar\Bar', $bar);
     }
 
     public function testLoadMissing()
     {
         $this->setExpectedException('Error');
-        new Baz\Baz();
+        new \Baz\Baz();
     }
 
     public function testAutoloadFunctions()
@@ -50,10 +50,10 @@ class AutoloaderTest extends TestCase
     {
         $this->autoloader->register('Dib', ['/mocks/Dib', '/mocks/more']);
 
-        $dib = new Dib\Dib();
+        $dib = new \Dib\Dib();
         $this->assertInstanceOf('Dib\Dib', $dib);
 
-        $giz = new Dib\Giz();
+        $giz = new \Dib\Giz();
         $this->assertInstanceOf('\Dib\Giz', $giz);
     }
 
@@ -63,7 +63,7 @@ class AutoloaderTest extends TestCase
         $autoloader = new Autoloader($base_dir);
         $autoloader->register('Zim', '/mocks/Zim');
 
-        $zim = new Zim\Zim();
+        $zim = new \Zim\Zim();
         $this->assertInstanceOf('Zim\Zim', $zim);
     }
 
