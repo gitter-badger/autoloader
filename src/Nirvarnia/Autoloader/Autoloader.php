@@ -92,6 +92,7 @@ final class Autoloader
             $relative_class = mb_substr($class, $pos + 1); // #2
             $mapped_file = $this->loadMappedFile($prefix, $relative_class); // #3
             if ($mapped_file) {
+
                 return $mapped_file;
             }
             $prefix = rtrim($prefix, '\\'); // #4
@@ -113,6 +114,7 @@ final class Autoloader
     private function loadMappedFile(string $prefix, string $relative_class)
     {
         if ( ! array_key_exists($prefix, $this->prefixes)) {
+
             return false;
         }
 
@@ -125,6 +127,7 @@ final class Autoloader
                   .str_replace('\\', '/', $relative_class)
                   .'.php';
             if ($this->requireFile($file)) {
+
                 return $file;
             }
         }

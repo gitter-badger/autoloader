@@ -44,7 +44,6 @@ enabled:
   - no_blank_lines_between_imports
   - no_blank_lines_between_traits
   - no_closing_tag
-  - no_extra_block_blank_lines
   - no_empty_comment
   - no_empty_phpdoc
   - no_empty_statement
