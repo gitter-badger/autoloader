@@ -12,7 +12,7 @@ class AutoloaderTest extends TestCase
 
     protected function setUp()
     {
-        $base_dir = dirname(dirname(__FILE__));
+        $base_dir = dirname(__DIR__);
         $this->autoloader = new Autoloader($base_dir);
 
         $this->autoloader->register('Foo', '/mocks/Foo');
@@ -22,18 +22,18 @@ class AutoloaderTest extends TestCase
     public function testLoadFoo()
     {
         $foo = new Foo\Foo();
-        $this->assertInstanceOf(Foo\Foo::class, $foo);
+        $this->assertInstanceOf('Foo\Foo', $foo);
     }
 
     public function testLoadBar()
     {
         $bar = new Bar\Bar();
-        $this->assertInstanceOf(Bar\Bar::class, $bar);
+        $this->assertInstanceOf('Bar\Bar', $bar);
     }
 
     public function testLoadMissing()
     {
-        $this->setExpectedException(Error::class);
+        $this->setExpectedException('Error');
         new Baz\Baz();
     }
 
@@ -51,33 +51,33 @@ class AutoloaderTest extends TestCase
         $this->autoloader->register('Dib', ['/mocks/Dib', '/mocks/more']);
 
         $dib = new Dib\Dib();
-        $this->assertInstanceOf(Dib\Dib::class, $dib);
+        $this->assertInstanceOf('Dib\Dib', $dib);
 
         $giz = new Dib\Giz();
-        $this->assertInstanceOf(\Dib\Giz::class, $giz);
+        $this->assertInstanceOf('\Dib\Giz', $giz);
     }
 
     public function testMoreAutoloaderInstances()
     {
-        $base_dir = dirname(dirname(__FILE__));
+        $base_dir = dirname(__DIR__);
         $autoloader = new Autoloader($base_dir);
         $autoloader->register('Zim', '/mocks/Zim');
 
         $zim = new Zim\Zim();
-        $this->assertInstanceOf(Zim\Zim::class, $zim);
+        $this->assertInstanceOf('Zim\Zim', $zim);
     }
 
     public function testDeclaredClasses()
     {
         $declared = get_declared_classes();
 
-        $this->assertTrue(in_array(Foo\Foo::class, $declared));
-        $this->assertTrue(in_array(Bar\Bar::class, $declared));
-        $this->assertTrue(in_array(Dib\Dib::class, $declared));
-        $this->assertTrue(in_array(Dib\Giz::class, $declared));
-        $this->assertTrue(in_array(Zim\Zim::class, $declared));
+        $this->assertTrue(in_array('Foo\Foo', $declared, true));
+        $this->assertTrue(in_array('Bar\Bar', $declared, true));
+        $this->assertTrue(in_array('Dib\Dib', $declared, true));
+        $this->assertTrue(in_array('Dib\Giz', $declared, true));
+        $this->assertTrue(in_array('Zim\Zim', $declared, true));
 
-        $this->assertFalse(in_array(Zim\Nox::class, $declared));
-        $this->assertFalse(in_array(Zim\Lov::class, $declared));
+        $this->assertFalse(in_array('Zim\Nox', $declared, true));
+        $this->assertFalse(in_array('Zim\Lov', $declared, true));
     }
 }

@@ -28,7 +28,7 @@ final class Autoloader
      *
      * An associative array where the key is a namespace prefix and the value is
      * an array of directories, each relative to the $base_dir, for autoloadable
-     * classes in that namespace.
+     * classes in that namespace
      */
     private $prefixes = [];
 
@@ -44,7 +44,7 @@ final class Autoloader
     public function __construct(string $base_dir = null)
     {
         $this->base_dir = ($base_dir ? $base_dir : get_include_path());
-        spl_autoload_register(array($this, 'load'));
+        spl_autoload_register([$this, 'load']);
     }
 
     /**
@@ -87,12 +87,11 @@ final class Autoloader
         // the next loop.
 
         $prefix = $class;
-        while (false !== $pos = strrpos($prefix, '\\')) {
-            $prefix = substr($class, 0, $pos + 1); // #1
-            $relative_class = substr($class, $pos + 1); // #2
+        while (false !== $pos = mb_strrpos($prefix, '\\')) {
+            $prefix = mb_substr($class, 0, $pos + 1); // #1
+            $relative_class = mb_substr($class, $pos + 1); // #2
             $mapped_file = $this->loadMappedFile($prefix, $relative_class); // #3
             if ($mapped_file) {
-
                 return $mapped_file;
             }
             $prefix = rtrim($prefix, '\\'); // #4
@@ -111,10 +110,9 @@ final class Autoloader
      *
      * @return string|bool
      */
-    protected function loadMappedFile(string $prefix, string $relative_class)
+    private function loadMappedFile(string $prefix, string $relative_class)
     {
         if ( ! array_key_exists($prefix, $this->prefixes)) {
-
             return false;
         }
 
@@ -127,7 +125,6 @@ final class Autoloader
                   .str_replace('\\', '/', $relative_class)
                   .'.php';
             if ($this->requireFile($file)) {
-
                 return $file;
             }
         }
@@ -142,7 +139,7 @@ final class Autoloader
      *
      * @return bool True if the file exists, false if not
      */
-    protected function requireFile(string $file) : bool
+    private function requireFile(string $file): bool
     {
         if (file_exists($file)) {
             require $file;
