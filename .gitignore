@@ -1,6 +1,6 @@
 # Exclude ApiGen output, temporary files, and dependencies:
 
-/docs
+/api
 /tmp
 /vendor
 

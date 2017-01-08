@@ -20,7 +20,7 @@
 # Exclude these files from zipped archives of the repository,
 # which will include Composer installs with --prefer-dist.
 
-/docs export-ignore
+/api export-ignore
 /mocks export-ignore
 /tmp export-ignore
 /tests export-ignore

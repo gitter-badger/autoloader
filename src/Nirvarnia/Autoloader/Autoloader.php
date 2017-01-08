@@ -143,7 +143,7 @@ final class Autoloader
      *
      * @return bool True if the file exists, false if not
      */
-    private function requireFile(string $file): bool
+    private function requireFile(string $file)//: bool
     {
         if (file_exists($file)) {
             require $file;
