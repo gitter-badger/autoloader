@@ -31,10 +31,16 @@ class AutoloaderTest extends TestCase
         $this->assertInstanceOf('Bar\Bar', $bar);
     }
 
-    public function testLoadMissing()
+    public function testLoadMissing1()
     {
         $this->setExpectedException('Error');
         new \Baz\Baz();
+    }
+
+    public function testLoadMissing2()
+    {
+        $this->setExpectedException('Error');
+        new \Foo\Baz();
     }
 
     public function testAutoloadFunctions()
