@@ -1,31 +1,11 @@
-<?php declare(strict_types=1);
+<?php
+declare(strict_types=1);
 
 /**
- * This is free and unencumbered software released into the public domain.
+ * @package    Nirvarnia
  *
- * Anyone is free to copy, modify, publish, use, compile, sell, or
- * distribute this software, either in source code form or as a compiled
- * binary, for any purpose, commercial or non-commercial, and by any
- * means.
- *
- * In jurisdictions that recognize copyright laws, the author or authors
- * of this software dedicate any and all copyright interest in the
- * software to the public domain. We make this dedication for the benefit
- * of the public at large and to the detriment of our heirs and
- * successors. We intend this dedication to be an overt act of
- * relinquishment in perpetuity of all present and future rights to this
- * software under copyright law.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
- * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
- * IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR
- * OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
- * ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
- * OTHER DEALINGS IN THE SOFTWARE.
- *
- * @see  https://github.com/nirvarnia/autoloader
- * @see  https://www.nirvarnia.org/
+ * @copyright  Kieran Potts
+ * @license    Unlicense
  */
 
 namespace Nirvarnia\Autoloader;
@@ -38,29 +18,28 @@ final class Autoloader
     /**
      * @var string
      *
-     * The base directory for all autoloadable class paths.
+     * The base directory for all autoloadable class paths. If this is null, the
+     * PHP include path will be used as the base directory.
      */
     private $base_dir = null;
 
     /**
      * @var array
      *
-     * An associative array where the key is a namespace prefix and the value
-     * is an array of directories for classes in that namespace. Directories
-     * are relative to $base_dir.
+     * An associative array where the key is a namespace prefix and the value is
+     * an array of directories, each relative to the $base_dir, for autoloadable
+     * classes in that namespace.
      */
     private $prefixes = [];
 
     /**
      * Constructor.
      *
-     * Sets the base directory for all autoloadable class paths, and registers
-     * the load() method with the SPL's autoloader stack.
+     * Sets the base directory for autoloadable classes and registers the load()
+     * method with the SPL's autoloader stack. If a base directory is not given,
+     * the base directory will be set to PHP's include path.
      *
-     * If a base directory is not provided, the base directory will be set to
-     * PHP's include path.
-     *
-     * @params  string|null  $base_dir
+     * @params string|null $base_dir
      */
     public function __construct(string $base_dir = null)
     {
@@ -71,10 +50,10 @@ final class Autoloader
     /**
      * Adds a base directory for a namespace prefix.
      *
-     * @param   string        $prefix     The namespace prefix.
-     * @param   string|array  $directory  One or more directories for class files in the namespace.
+     * @param string       $prefix    The namespace prefix
+     * @param string|array $directory One or more directories for class files in the namespace
      *
-     * @return  void
+     * @return void
      */
     public function register(string $prefix, $directory)
     {
@@ -90,26 +69,22 @@ final class Autoloader
     }
 
     /**
-     * Class autoloading method.
+     * Class autoloading method.  Takes a fully-qualified class name and returns
+     * the mapped file name or false if the class could not be autoloaded.
      *
-     * Takes a fully-qualified class name as its only parameter.
+     * @param string $class
      *
-     * Returns the mapped file name on success, or boolean false if the class
-     * could not be autoloaded.
-     *
-     * @param   string  $class
-     *
-     * @return  string|bool
+     * @return string|bool
      */
     public function load(string $class)
     {
-        // Work backwards through the namespace parts of the fully-qualified
-        // class name, until find a mapped file name.
+        // Work backward through the namespace part of the fully-qualified class
+        // name, until a mapped file is found.
 
-        // #1 Retain the trailing namespace separator in the prefix.
-        // #2 The rest is the relative class name.
-        // #3 Try to load a mapped file for the prefix + relative class.
-        // #4 Remove the trailing namespace separator for the next loop.
+        // #1 Retain the trailing namespace separator in the prefix. #2 The rest
+        // is the relative class name. #3 Try to find a file for the prefix plus
+        // relative class. #4 Remove the trailing namespace separator, ready for
+        // the next loop.
 
         $prefix = $class;
         while (false !== $pos = strrpos($prefix, '\\')) {
@@ -117,6 +92,7 @@ final class Autoloader
             $relative_class = substr($class, $pos + 1); // #2
             $mapped_file = $this->loadMappedFile($prefix, $relative_class); // #3
             if ($mapped_file) {
+
                 return $mapped_file;
             }
             $prefix = rtrim($prefix, '\\'); // #4
@@ -126,24 +102,24 @@ final class Autoloader
     }
 
     /**
-     * Loads the mapped file for a namespace prefix and relative class.
+     * Loads the mapped file for a namespace prefix and relative class name.  If
+     * a mapped file is successfully loaded, the name of the mapped file will be
+     * returned. If not mapped file can be loaded, boolean false is returned.
      *
-     * If a mapped file is successfully loaded, the name of the mapped file
-     * is returned. If no mapped file can be loaded, boolean false is returned.
+     * @param string $prefix         The namespace prefix
+     * @param string $relative_class The relative class name
      *
-     * @param   string  $prefix          The namespace prefix.
-     * @param   string  $relative_class  The relative class name.
-     *
-     * @return  string|bool
+     * @return string|bool
      */
     protected function loadMappedFile(string $prefix, string $relative_class)
     {
-        if (!array_key_exists($prefix, $this->prefixes)) {
+        if ( ! array_key_exists($prefix, $this->prefixes)) {
+
             return false;
         }
 
-        // Look through the base directories for this namespace prefix.
-        // If a mapped file exists, require it and exit.
+        // Look through the base directories for the namespace prefix. If a file
+        // can be mapped to the path, require it and exit.
 
         foreach ($this->prefixes[$prefix] as $directory) {
             $file = $this->base_dir
@@ -151,6 +127,7 @@ final class Autoloader
                   .str_replace('\\', '/', $relative_class)
                   .'.php';
             if ($this->requireFile($file)) {
+
                 return $file;
             }
         }
@@ -161,14 +138,15 @@ final class Autoloader
     /**
      * If a file exists, require it from the file system.
      *
-     * @param   string  $file  The file to require.
+     * @param string $file The file to require
      *
-     * @return  bool           True if the file exists, false if not.
+     * @return bool True if the file exists, false if not
      */
     protected function requireFile(string $file) : bool
     {
         if (file_exists($file)) {
             require $file;
+
             return true;
         }
 

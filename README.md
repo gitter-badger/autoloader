@@ -3,7 +3,7 @@
 
 Class autoloading system that implements the PSR-4 standard.
 
-[![License](https://img.shields.io/github/license/nirvarnia/autoloader.svg?colorA=333333&colorB=0099ff&style=flat-square)](LICENSE.md)
+[![License](https://img.shields.io/packagist/l/nirvarnia/autoloader.svg?colorA=333333&colorB=0099ff&style=flat-square)](LICENSE.md)
 [![Latest Release](https://img.shields.io/github/release/nirvarnia/autoloader.svg?colorA=333333&colorB=0099ff&style=flat-square)](https://github.com/nirvarnia/autoloader/releases)
 [![Total Downloads on Packagist](https://img.shields.io/packagist/dt/nirvarnia/autoloader.svg?colorA=333333&colorB=0099ff&style=flat-square)](https://packagist.org/packages/nirvarnia/autoloader)
 [![Code Climate Quality Score](https://img.shields.io/codeclimate/github/nirvarnia/autoloader.svg?label=code%20quality%20GPA&colorA=333333&&colorB=0099ff&style=flat-square)](https://codeclimate.com/github/nirvarnia/autoloader)

@@ -2,11 +2,9 @@ preset: none
 
 enabled:
   - align_double_arrow
-  - align_equals
   - alpha_ordered_imports
   - binary_operator_spaces
   - blank_line_after_namespace
-  - blank_line_after_opening_tag
   - blank_line_before_return
   - braces
   - cast_spaces
