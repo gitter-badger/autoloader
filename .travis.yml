@@ -39,7 +39,7 @@ after_script:
   - if [[ $(phpenv version-name) == '7.0' ]]; then vendor/bin/coveralls -v; fi
 
 after_success:
-  - if  [ $(phpenv version-name) == '7.0' ] && [ $TRAVIS_BRANCH == 'master' ] && [ $TRAVIS_PULL_REQUEST == 'false' ]; then vendor/bin/apigen generate; fi
+  - if  [ $(phpenv version-name) == '7.0' ] && [ $TRAVIS_BRANCH == 'master' ]; then vendor/bin/apigen generate; fi
 
 branches:
   only:
