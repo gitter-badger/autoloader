@@ -1,5 +1,6 @@
 # Exclude temporary files and dependencies.
 
+/api
 /tmp
 /vendor
 
