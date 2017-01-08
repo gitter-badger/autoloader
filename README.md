@@ -12,7 +12,7 @@ Class autoloading system that implements the PSR-4 standard.
 
 * [Requirements](https://github.com/nirvarnia/docs/blob/master/src/1.0/requirements.md)
 * [Installation](https://github.com/nirvarnia/docs/blob/master/src/1.0/installation.md)
-* [Usage](https://github.com/nirvarnia/docs/blob/master/src/1.0/api/autoloader.md)
+* [Usage](https://github.com/nirvarnia/docs/blob/master/src/1.0/autoloading.md)
 * [Tests](https://github.com/nirvarnia/docs/blob/master/src/1.0/tests.md)
 * [Support](https://github.com/nirvarnia/docs/blob/master/src/support.md)
 * [Contributing](https://github.com/nirvarnia/docs/blob/master/src/contributing.md)
