@@ -1,5 +1,5 @@
 
-[![Nirvarnia](https://raw.githubusercontent.com/nirvarnia/logo/master/build/nirvarnia-logo.210x60.png)](https://www.nirvarnia.org/)
+[![Nirvarnia](https://cdn.rawgit.com/nirvarnia/logo/v1.0.0/build/nirvarnia-logo.210x60.png)](https://www.nirvarnia.com/)
 
 Class autoloading system that implements the PSR-4 standard.
 
