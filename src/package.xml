@@ -7,7 +7,7 @@
     http://pear.php.net/dtd/package-2.0
     http://pear.php.net/dtd/package-2.0.xsd">
     <name>autoloader</name>
-    <channel>pear.nirvarnia.org</channel>
+    <channel>pear.nirvarnia.com</channel>
     <summary>Class autoloading system that implements the PSR-4 standard</summary>
     <description>This package contains a single class which can be used to autoload classes using the PSR-4 standard.</description>
     <lead>
