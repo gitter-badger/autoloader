@@ -51,7 +51,7 @@ final class Autoloader
      * Adds a base directory for a namespace prefix.
      *
      * @param string       $prefix    The namespace prefix
-     * @param string|array $directory One or more directories for class files in the namespace
+     * @param string|array $directory One or more directories
      *
      * @return void
      */
